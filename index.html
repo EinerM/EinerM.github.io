@@ -1,0 +1,224 @@
+<!-- ::::::::::::::::::::::::::::::::::::::::::::
+	 :::  PORFAVOR NO EDITE O MODIFIQUE ESTE  :::
+	 :::  ARCHIVO DE LO CONTRARIO PODRIA      :::
+	 :::  REPERCUTIR A ERRORES EN LA APP	  :::
+	 :::  									  :::
+	 :::         DESARROLLADO POR:            :::
+	 ::: 	  ING. EINER MERCADO ZELAYA		  :::
+	 :::::::::::::::::::::::::::::::::::::::::::: -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>EMZ TECH SERVICE</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/fs-modal.css">
+	<link rel="stylesheet" href="assets/css/miestilo.css">
+	<link rel="stylesheet" href="assets/css/alertify.css">
+	<link rel="stylesheet" href="assets/css/alertify-default.css">
+	<link rel="stylesheet" href="assets/css/font-awesome.css">
+	<link rel="stylesheet" href="assets/plugin/jquery-ui/jquery-ui.css">
+	<link rel="stylesheet" href="assets/plugin/select2/css/select2.css">
+
+	<!-- Modal para no compatibilidad -->
+	</head><div style="background:#000000;" class="modal fade" id="ModNoComp" role="dialog"  aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div style="background:#E72B2D;color:#ffffff;" class="modal-header">
+					<span onclick="cerrarApp();" class="btn btn-default btn-xs pull-right" aria-hidden="true">x</span>
+					<h4 class="modal-title">No Compatible</h4>
+				</div>
+
+				<div class="modal-body">
+					<p style="font-size:1.2em;">¡Up!, parece que su teléfono no es compatible con la App, espere a una actualización compatible con su teléfono.</p>
+				</div>
+
+
+				<div class="modal-footer">
+					<button onclick="cerrarApp();" class="btn btn-danger">Salir</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal para validacion de la conectividad -->
+	<div style="background:#000000;" class="modal fade" id="ModConectividad" role="dialog"  aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div style="background:#E72B2D;color:#ffffff;" class="modal-header">
+
+					<span onclick="cerrarApp();" class="btn btn-default btn-xs pull-right" aria-hidden="true">x</span>
+					<h4 class="modal-title">Error de conexión</h4>
+				</div>
+
+				<div class="modal-body">
+					<p id="Reconectando" style="font-size:1.2em;font-weight:700;"></p>
+					<br>
+					<p style="font-size:1.2em;">No tienes acceso a internet, asegúrate que el wi-fi o los datos móviles estén activados y contar con un plan de internet. No te preocupes esto es solo para validar la App, después podrás usar la app sin conexión a internet.</p>
+				</div>
+
+
+				<div class="modal-footer">
+					<button onclick="reintentar();" class="btn btn-primary">Reintentar</button> 
+					<button onclick="cerrarApp();" class="btn btn-danger">Salir</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+
+ 
+<body>
+
+	<div class="Principal">
+
+	<header class="encabezado">
+		
+		<div style="height:3.4em;padding-right:7px; padding-top: 0.7em;" id="forMenuClose">
+			<span class="glyphicon glyphicon-menu-hamburger" id="mostrar-menu"></span>
+
+			
+			<div class="dropdown pull-right">
+				<a class="logout dropdown-toggle" id="dropdown1" data-toggle="dropdown" role="button" href="#"><img class="img-responsive img-circle" id="foto-usuario" src="assets/img/foto-usuario/defecto.jpg" width="27" height="25"></a>
+				
+				<ul class="dropdown-menu drop" role="menu" aria-labelledby="dropdown1">
+				   <div class="dropdown-header">
+				
+				   <span style="text-align: center;font-size: 1.2em;" id="nombre-usuario">Einer Mercado Zelaya</span>
+
+					</div>
+					<div class="contenido-dropdown">
+						
+
+					</div>
+
+					<div class="pies-dropdown">
+
+					</div>
+
+
+				</ul>
+			</div>
+			
+			<p class="titulo">EMZ TECH SERVICE</p>
+			
+
+		</div>
+		
+	</header>
+	
+
+	<div id="contendorPCV">
+		<div id="topbar"></div>
+		<div style="width: 100%;padding: 0;">
+			<div style="padding-bottom: 2em;" class="col-xs-12">
+				<p style="font-size: 1.3em; font-weight: 700;text-align: left;padding-left: 0.3em;padding-top: 0.3em;">EINER EDILBERTO MERCADO ZELAYA</p>
+			</div>
+		</div>
+		<div style="padding: 0 1.09em;" class="row">
+
+			<div style="background-color: #d4cfd4;" class="col-lg-4 col-md-5 col-sm-4 col-xs-4">
+
+				<div style="width: 90px;height: 95px;margin-bottom: 1.5em;position: relative;bottom: 2em;margin: 0 auto;">
+					<img  class="img-responsive img-circle img-thumbnail" id="dropdown-img" src="assets/img/foto-usuario/defecto.jpeg">	
+				</div>
+
+				<vid class="dptitle">Nombre y Apellidos</vid>
+				<div class="dpdescription">Einer Edilberto Mercado Zelaya</div>
+
+				<vid class="dptitle">Lugar de nacimiento</vid>
+				<div class="dpdescription">Waspam Rio Coco RACCN, Nicaragua</div>
+
+				<vid class="dptitle"></vid>
+				<div class="dpdescription"></div>
+
+				<vid class="dptitle"></vid>
+				<div class="dpdescription"></div>
+
+				<vid class="dptitle"></vid>
+				<div class="dpdescription"></div>
+				
+			</div>
+
+			<div class="col-lg-8 col-md-7 col-sm-8 col-xs-8">
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum ad optio sapiente commodi inventore autem excepturi suscipit non amet repellat perspiciatis explicabo molestiae, assumenda consequuntur ea rem velit possimus rerum ipsa voluptas. Deleniti ipsa eius praesentium architecto maxime et placeat harum illum ratione corrupti, error dolorum consequatur blanditiis soluta saepe dolores dignissimos veniam iure mollitia quidem laboriosam. Cupiditate odio, blanditiis, sit sapiente nihil repellendus, nemo vel eos dicta assumenda cumque doloribus! Unde, alias eum? Inventore expedita officia in magnam debitis, doloremque optio enim ad voluptate beatae culpa nam earum tenetur. Delectus totam esse a deserunt pariatur in molestias, laudantium iure sit odio expedita et facilis, alias nemo labore sunt voluptates tempora sint consequatur cupiditate dolorem minus? Adipisci atque iusto consequuntur earum tempore sed odit eos animi voluptatum, eligendi esse id dolores voluptate nam nostrum, facere cum impedit perspiciatis magnam fuga soluta ratione debitis velit omnis. Veniam esse ab tempora odio!</p>
+			</div>
+		</div>
+		<div id="bottombar"></div>
+	</div>
+
+	
+
+	<aside id="menu-lateral" class="menu-lateral">
+
+	<ul id="accordion" class="accordion">
+		<div class="aside-content-header" style="background-image: url(assets/img/kali.jpg);padding: 8px;">
+			<div style="width: 60px;height: 60px;border-radius:35px;margin-bottom: 10px;">
+			<img  class="img-responsive img-circle" id="dropdown-img" src="assets/img/foto-usuario/defecto.jpg">	
+			</div>
+			<div>
+				<p style="position: relative;bottom: 10px;font-weight: 700;font-size: 15px;left: 5px;color:#ffffff;">EMZ TECH SERVICE</p>
+				<p style="position: relative;bottom: 20px;font-weight: 700;font-size: 12px;left: 8px;color:#ffffff;">emztechservice@gmail.com</p>
+			</div>
+	
+		</div>
+		
+		
+		<li>
+			<a class="link" href="index.html"><i class="glyphicon glyphicon-music"></i>Menu 1</a>
+		</li>
+		<li>
+			<a class="link" href="vistas/purasunra.html"><i class="glyphicon glyphicon-plus-sign"></i>Menu 2</a>
+		</li>
+		<li>
+			<a class="link" href="vistas/favorito.html"><i class="glyphicon glyphicon-heart"></i>Menu 3</a>
+		</li>
+		<li>
+			<a class="link" href="vistas/actualizar.html"><i class="glyphicon glyphicon-refresh"></i>Menu 4</a>
+		</li>
+		<li>
+			<a class="link" href="vistas/configuracion.html"><i class="glyphicon glyphicon-cog"></i>Menu 5</a>
+		</li>
+		<li>
+			<a class="link" href="vistas/acerca.html"><i class="glyphicon glyphicon-question-sign"></i>Acerca de</a>
+		</li>
+		<li>
+			<a class="link" href="javascript:Android.compartir('Estoy usando la genial App Morevian Lawana, lo puedes descargar desde el siguiente enlace. https://gdrive.com');"><i class="glyphicon glyphicon-share"></i>Compartir</a>
+		</li>
+		<li>
+			<a class="link" href="javascript:cerrarApp();"><i class="glyphicon glyphicon-off"></i>Cerrar App</a>
+		</li>
+
+	</ul>
+			
+</aside>
+
+<div id="mostrarM"></div>
+ 
+
+
+</div>
+
+</body>
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.js"></script>
+<script src="assets/plugin/select2/js/select2.js"></script>
+<script src="assets/plugin/select2/js/es/es.js"></script>
+<script src="assets/js/fs-modal.min.js"></script>
+<script src="assets/js/codigodisenio.js"></script>
+<script src="assets/js/hammer.js"></script>
+<script src="assets/js/alertify.js"></script>
+<script src="assets/js/inicio.js"></script>
+
+<script>
+
+$.fn.delayPasteKeyUp = function(fn, ms){var timer = 0;$(this).on('propertychange input', function(){clearTimeout(timer);timer = setTimeout(fn, ms);});};var mostrarM = new Hammer(document.getElementById('mostrarM'));mostrarM.on('swiperight',function(e){$('body').css({overflow:'hidden'});$('aside').addClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-menu-hamburger');$('#mostrar-menu').addClass('glyphicon glyphicon-remove');setTimeout(function(){$('aside').css({background:'rgba(0,0,0,0.5)'});},200);});var swipeMenuLateral = new Hammer(document.getElementById('menu-lateral'),['swipe']);swipeMenuLateral.on('swipeleft',function(e){$('body').css({overflow:'scroll'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');});var tapMenuLateral = new Hammer(document.getElementById('menu-lateral'),['tap']);tapMenuLateral.on('tap',function(e){var x = e.center.x;if (x > 230) {$('body').css({overflow:'scroll'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');}});var tapHeader = new Hammer(document.getElementById('forMenuClose'));tapHeader.on('tap',function(e){var x = e.center.x;if (x > 38) {$('body').css({overflow:'scroll'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');}});var cuerpoSwipe = new Hammer(document.getElementById('cuerpoSwipe'));cuerpoSwipe.on('swipeleft swiperight',function(e){var position = parseInt($('#position').html());var tipoGesto = e.type;if (tipoGesto==='swipeleft') {if (position==381) {}else{fade();setTimeout(function(){mostrar(position+1,'L');},300);}}else if(tipoGesto === 'swiperight'){if (position==1) {}else{fade();setTimeout(function(){mostrar(position-1,'L');},300);}}});function fade(){$('.cuerpo').fadeOut(300);$('.cuerpo').fadeIn(0);}$('#busqueda').on('blur', function(){$('#busqueda').val('');});$('#busqueda').delayPasteKeyUp(function(){var num = $('#busqueda').val();if (num==0) {num = 1;$('#busqueda').val('')}else if(num>381){num = 1;$('#busqueda').val('');}else if(num==' '){num=1;$('#busqueda').val('');}else if(num==''){num=1;}mostrar(num, 'L');});function abreModalBusqueda(){$('#busquedaHimno').val('');$('#cuerpoM').html('');document.getElementById('coincidenciasB').innerHTML ='';$('#modalSearch').modal({show:true,backdrop:'static',});setTimeout(function(){document.getElementById('busquedaHimno').focus();},200);}$('#busquedaHimno').delayPasteKeyUp(function(){if ($('#busquedaHimno').val() == '') {$('#busquedaHimno').val('');$('#cuerpoM').html('');document.getElementById('coincidenciasB').innerHTML ='';}},100);$('#formBuscaHimno').submit(function(e){e.preventDefault();var himnos = [];dataBase = id.open('Lawana', 1);dataBase.onsuccess = function(e){var baseD = e.target.result;var ObjetoDB = baseD.transaction(['lawana'], 'readonly').objectStore('lawana');ObjetoDB.get(1).onsuccess = function(event){var res = event.target.result;himnos = res.lawana;var dato = $('#busquedaHimno').val();if (dato == '') {}else if(dato == '0'){}else{Android.bloquear();document.getElementById('coincidenciasB').innerHTML = '';setTimeout(function(){var texto = new RegExp(dato,'gi');var start = performance.now();var resultadoBusqueda = himnos.filter(function(item){return texto.test(item);});if (resultadoBusqueda.length > 0) {document.getElementById('cuerpoM').innerHTML = ``;setTimeout(function(){document.getElementById('coincidenciasB').innerHTML = `<div style="box-shadow: 0px 0px 7px;width:90%;margin:0 auto;padding:7px;border-radius:10px;background:#fff;color:#000">${resultadoBusqueda.length} resultados.</div>`;for (var i = 0; i < resultadoBusqueda.length; i++) {document.getElementById('cuerpoM').innerHTML += `<div id="${i}" onclick="eval(${i});" style="box-shadow: 0px 0px 7px;width:80%;margin:20px auto; auto;padding:7px;border-radius:10px;max-height:200px;overflow-y:auto;">${resultadoBusqueda[i]}</div>`;}Android.desbloquear();},100);}else{Android.desbloquear();document.getElementById('coincidenciasB').innerHTML = `<div style="box-shadow: 0px 0px 7px;width:90%;margin:0 auto;padding:7px;border-radius:10px;background:#fff;color:#000;">No se encontró resultado.</div>`;document.getElementById('cuerpoM').innerHTML = ``;}},100);}}}});function eval(id) {let num = $(`#${id}>p`).html();mostrar(num,'L');$('#modalSearch').modal('hide');}$('.dropdown').on('show.bs.dropdown',function(){$('body').css({overflow:'hidden'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');});$('.dropdown').on('hide.bs.dropdown',function(){$('body').css({overflow:'scroll'});}); function mostrarImei2(){Android.mostrarImei()}
+
+</script>
+
+</html>

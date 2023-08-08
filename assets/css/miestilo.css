@@ -67,6 +67,12 @@ a:visited{
 	top: -0.2em;
 }
 
+#linkcv{
+Color:#000;
+font-size:1em;
+	
+}
+
 
 /*Estilos Para telefonos Smartphone*/
 @media screen and (min-width: 220px) and (max-width:729px){ 

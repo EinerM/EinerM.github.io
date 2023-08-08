@@ -69,8 +69,9 @@ a:visited{
 
 #linkcv{
 Color:#000;
-font-size:2em;
+font-size:1em;
 font-weigth:700;
+text-decoration: underline;
 
 	
 }

@@ -1,0 +1,67 @@
+
+<!-- ::::::::::::::::::::::::::::::::::::::::::::
+	 :::  PORFAVOR NO EDITE O MODIFIQUE ESTE  :::
+	 :::  ARCHIVO DE LO CONTRARIO PODRIA      :::
+	 :::  REPERCUTIR A ERRORES EN LA APP	  :::
+	 :::  									  :::
+	 :::         DESARROLLADO POR:            :::
+	 ::: 	  ING. EINER MERCADO ZELAYA		  :::
+	 :::::::::::::::::::::::::::::::::::::::::::: -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Lawana nani</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.css">
+	<link rel="stylesheet" href="../assets/css/miestilo.css">
+</head>
+
+<body>
+	<header class="encabezado">
+		<a href="javascript:irAtras();" class="glyphicon glyphicon-arrow-left" id="atras"></a>
+		
+		<p class="titulo">Configuración</p>
+
+	</header>
+
+	<div class="cuerpo">
+	
+		<div style="text-align: center;margin: 0 auto;">
+			<br>
+			<label style="font-size: 1.2em;margin:0;padding:0;">Tamaño de fuente</label>
+			<p style="font-size:0.85em;margin:0;padding:0;">Tamaño de letra en las vistas (Lawana y Purasunra)</p>
+			<select style="width: 90%;margin: 0.5em auto;" class="form-control" id="tamFuente">
+				<option value="1em">Pequeño</option>
+				<option value="1.3em">Mediano</option>
+				<option value="1.5em">Normal</option>
+				<option value="1.7em">Grande</option>
+				<option value="1.9em">Enorme</option>
+			</select>
+			<div style="margin:1em;"></div>
+			<label style="font-size: 1.2em;margin:0;padding:0;">Alineación de texto</label>
+			<p style="font-size:0.85em;margin:0;padding:0;">Alineación del texto en las vistas (Lawana y Purasunra)</p>
+			<select style="width: 90%;margin: 0.5em auto;" class="form-control" id="textAling">
+				<option value="izquierda">Izquierda</option>
+				<option value="centrado">Centrado</option>
+				<option value="justificado">Justificado</option>
+			</select>
+		</div>
+
+		<br><br><br><br><br><br><br><br>
+		
+	</div>
+
+</body>
+<script src="../assets/js/jquery.js"></script>
+<script src="../assets/js/bootstrap.js"></script>
+<script src="../assets/js/configuracion.js"></script>
+<script src="../assets/js/codigodisenio.js"></script>
+<script>
+$('#tamFuente').change(function(){updateData($('#tamFuente').val());});
+$('#textAling').change(function(){updateAling($('#textAling').val());});
+</script>
+
+</html>

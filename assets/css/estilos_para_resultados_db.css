@@ -1,0 +1,56 @@
+/* Card de cada palabra */
+.palabra-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 98%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.palabra-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Idioma y palabra */
+.palabra-idioma {
+    margin-bottom: 15px;
+    padding: 1em;
+    border-radius: 0.5em;
+}
+
+.palabra-idioma h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.palabra-idioma p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+}
+
+.palabra-idioma small {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #888;
+}
+
+
+
+/*estilos para favoritos*/
+
+.icono-agregar-favorito{
+    font-size: 1.3em;
+}
+
+.icono-eliminar-favorito{
+    font-size: 1.3em;
+}

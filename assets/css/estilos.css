@@ -144,6 +144,8 @@ body {
     flex-direction: column; /* Para poner el círculo encima del rectángulo */
     align-items: center; /* Para centrar horizontalmente */
     transform: rotate(180deg); /* Invertir*/
+    position: relative;
+    top: -1.8em;
 }
 
 .circle-container {

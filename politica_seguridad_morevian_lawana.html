@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - Morevian Lawana</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* Un fondo suave */
+            color: #333;
+        }
+
+        /* Contenedor Principal */
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #3a5a40; /* Verde Moravo/Naturaleza */
+            color: #ffffff;
+            padding: 20px 25px;
+            margin: -25px -25px 25px -25px; /* Extender al borde del contenedor */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 500;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        /* Títulos de Sección */
+        h2 {
+            color: #3a5a40; /* Verde consistente */
+            border-bottom: 2px solid #a3b18a; /* Línea sutil debajo */
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Párrafos */
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Enlaces */
+        a {
+            color: #588157; /* Un verde ligeramente más brillante para enlaces */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #3a5a40;
+            text-decoration: underline;
+        }
+
+        /* Énfasis */
+        strong {
+            font-weight: 600;
+            color: #2c3e50; /* Un color oscuro pero no negro puro */
+        }
+
+        /* Pie de Página */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #777;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* Responsive Básico */
+        @media (max-width: 600px) {
+            .container {
+                margin: 15px;
+                padding: 15px;
+            }
+            header {
+                padding: 15px;
+                margin: -15px -15px 15px -15px; /* Ajustar margen negativo */
+                 border-top-left-radius: 10px; /* Mantener radios en móvil */
+                 border-top-right-radius: 10px;
+            }
+            header h1 {
+                font-size: 1.6em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Política de Privacidad</h1>
+            <p>Aplicación Morevian Lawana</p>
+        </header>
+
+        <main>
+            <p><strong>Fecha de entrada en vigor:</strong> <span id="current-date"></span></p>
+
+            <p>Bienvenido/a a Morevian Lawana (la "Aplicación"). Tu privacidad es importante para nosotros. Esta Política de Privacidad explica qué información (si la hay) recopilamos y cómo la usamos.</p>
+
+            <h2>1. Información que NO Recopilamos</h2>
+            <p>Morevian Lawana está diseñada pensando en tu privacidad. <strong>No recopilamos, almacenamos ni compartimos ninguna información personal identificable sobre ti.</strong> Esto incluye, pero no se limita a:</p>
+            <ul>
+                <li>Nombre, dirección de correo electrónico, número de teléfono.</li>
+                <li>Datos de ubicación precisos o aproximados.</li>
+                <li>Información del dispositivo (más allá de lo necesario para las notificaciones push, gestionado por el sistema operativo y Firebase).</li>
+                <li>Datos de uso de la aplicación (qué himnos ves, cuánto tiempo usas la app, etc.).</li>
+                <li>Contactos, fotos u otros datos personales almacenados en tu dispositivo.</li>
+            </ul>
+            <p>La aplicación funciona de manera local en tu dispositivo, mostrando el contenido del himnario moravo en miskito sin necesidad de conectarse a nuestros servidores para rastrear tu actividad.</p>
+
+            <h2>2. Permiso de Notificaciones</h2>
+            <p>El único permiso que Morevian Lawana puede solicitar es el <strong>permiso para enviar Notificaciones Push</strong>.</p>
+            <p><strong>¿Por qué solicitamos este permiso?</strong></p>
+            <p>Utilizamos este permiso exclusivamente para enviarte notificaciones relevantes a través del servicio Firebase Cloud Messaging (FCM), una plataforma de Google. Estas notificaciones pueden incluir:</p>
+            <ul>
+                <li>Anuncios sobre nuevos himnos añadidos.</li>
+                <li>Actualizaciones importantes de la aplicación.</li>
+                <li>Recordatorios o mensajes relacionados con eventos o fechas significativas de la comunidad morava (si aplica).</li>
+                <li>Información sobre correcciones o mejoras.</li>
+            </ul>
+            <p><strong>Importante:</strong></p>
+            <ul>
+                <li>La concesión de este permiso es <strong>totalmente opcional</strong>. Puedes seguir utilizando todas las funciones principales de la aplicación (acceder al himnario) sin habilitar las notificaciones.</li>
+                <li>El uso de Firebase Cloud Messaging implica que tu dispositivo se registra en el servicio de Google para poder recibir dichas notificaciones. Google tiene su propia <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">política de privacidad</a> sobre cómo manejan los datos necesarios para este servicio (generalmente un token de registro anónimo del dispositivo). Nosotros, como desarrolladores de Morevian Lawana, <strong>no tenemos acceso a información personal tuya</strong> a través de este servicio, solo la capacidad de enviar mensajes a los dispositivos que han optado por recibirlos.</li>
+                <li>Puedes <strong>gestionar o revocar</strong> este permiso en cualquier momento a través de la configuración de notificaciones de tu dispositivo móvil (Android o iOS).</li>
+            </ul>
+
+            <h2>3. Servicios de Terceros</h2>
+            <p>Como se mencionó, utilizamos <strong>Firebase Cloud Messaging (FCM)</strong>, un servicio de Google, para la funcionalidad de notificaciones push. Te recomendamos revisar la política de privacidad de Firebase/Google para entender cómo manejan la información necesaria para este servicio.</p>
+            <p>Aparte de FCM para notificaciones (si las habilitas), la aplicación no integra otros servicios de terceros que recopilen información.</p>
+
+            <h2>4. Seguridad</h2>
+            <p>Aunque no recopilamos datos personales, tomamos medidas razonables para asegurar la integridad de la aplicación misma.</p>
+
+            <h2>5. Cambios a esta Política de Privacidad</h2>
+            <p>Podemos actualizar nuestra Política de Privacidad ocasionalmente. Te notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página dentro de la aplicación o mediante una notificación (si las tienes habilitadas). Se te aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio.</p>
+
+            <h2>6. Contacto</h2>
+            <p>Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contáctanos a través de: <br> <em>[Aquí deberías poner una dirección de correo electrónico de contacto o un enlace a un formulario/página web]</em></p>
+            <p><strong>Ejemplo:</strong> <a href="mailto:soporte.morevianlawana@example.com">soporte.morevianlawana@example.com</a> <em>(¡Reemplaza esto con tu email real!)</em></p>
+
+        </main>
+
+        <footer>
+            <p>© <span id="current-year"></span> Morevian Lawana. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Script sencillo para mostrar la fecha actual y el año en el pie de página
+        const today = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = today.toLocaleDateString('es-ES', options); // Formato español
+
+        document.getElementById('current-date').textContent = formattedDate;
+        document.getElementById('current-year').textContent = today.getFullYear();
+    </script>
+
+</body>
+</html>

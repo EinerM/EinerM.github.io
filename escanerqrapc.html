@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Receptor - ESCANER QR A PC</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #00d2ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        /* --- Screenshot Section --- */
+        .screenshot-container {
+            margin: 60px auto;
+            position: relative;
+            max-width: 800px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideUp 1s ease-out;
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .screenshot-container:hover img {
+            transform: scale(1.02);
+        }
+
+        /* --- Steps Section --- */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .step-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .step-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- Animaciones --- */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn-download {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">QR <i class="fa-solid fa-arrow-right-long"></i> PC</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Escanear QR a PC nunca fue tan fácil</h1>
+            <p>Envía enlaces, textos y datos de inventario directamente a tu computadora mediante WiFi. Sin cables, sin
+                complicaciones.</p>
+
+            <!-- REEMPLAZA EL LINK DE DRIVE AQUÍ -->
+            <a href="TU_LINK_DE_GOOGLE_DRIVE_AQUI" class="btn-download" target="_blank">
+                <i class="fa-brands fa-windows"></i>
+                Descargar Receptor para Windows
+            </a>
+            <p style="margin-top: 15px; font-size: 0.8rem;">Versión 1.0.0 | Compatible con Windows 10 y 11</p>
+        </section>
+
+        <!-- Screenshot -->
+        <section class="screenshot-container">
+            <!-- REEMPLAZA ESTA URL POR UNA CAPTURA REAL DE TU PROGRAMA -->
+            <img src="https://via.placeholder.com/800x450/1e293b/ffffff?text=Captura+del+Software+Receptor"
+                alt="Captura de pantalla del receptor QR">
+        </section>
+
+        <!-- Steps -->
+        <section class="steps">
+            <div class="step-card">
+                <div class="step-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
+                <h3>1. Descarga</h3>
+                <p>Instala el receptor en tu PC y asegúrate de estar conectado a la misma red WiFi que tu móvil.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon"><i class="fa-solid fa-qrcode"></i></div>
+                <h3>2. Vincula</h3>
+                <p>Abre la app en tu móvil y escanea el código de vinculación que aparece en la pantalla del PC.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                <h3>3. ¡Listo!</h3>
+                <p>Cualquier QR que escanees se enviará instantáneamente a tu computadora.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EMZ Tech Service. Todos los derechos reservados.</p>
+            <p>Desarrollado para mejorar tu productividad.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Un poco de interactividad: Suavizar la aparición de los elementos al hacer scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Página del Receptor QR lista.");
+            // Aquí podrías añadir un script para verificar si el link de Drive es válido
+        });
+    </script>
+</body>
+
+</html>

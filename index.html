@@ -7,177 +7,349 @@
 	 ::: 	  ING. EINER MERCADO ZELAYA		  :::
 	 :::::::::::::::::::::::::::::::::::::::::::: -->
 
-
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-	<meta charset="UTF-8" name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Inicio</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
-	<link rel="stylesheet" href="assets/css/fs-modal.css">
-	<link rel="stylesheet" href="assets/css/miestilo.css">
-	<link rel="stylesheet" href="assets/css/alertify.css">
-	<link rel="stylesheet" href="assets/css/alertify-default.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.css">
-	<link rel="stylesheet" href="assets/plugin/jquery-ui/jquery-ui.css">
-	<link rel="stylesheet" href="assets/plugin/select2/css/select2.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Einer Mercado | Ingeniero de Sistemas</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--bg-body: #0d1117;
+			--bg-card: #161b22;
+			--primary: #58a6ff;
+			--secondary: #21262d;
+			--text-main: #c9d1d9;
+			--text-bright: #f0f6fc;
+			--accent: #238636;
+			--border: #30363d;
+		}
 
-	<!-- Modal para no compatibilidad -->
-	</head><div style="background:#000000;" class="modal fade" id="ModNoComp" role="dialog"  aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div style="background:#E72B2D;color:#ffffff;" class="modal-header">
-					<span onclick="cerrarApp();" class="btn btn-default btn-xs pull-right" aria-hidden="true">x</span>
-					<h4 class="modal-title">No Compatible</h4>
-				</div>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			scroll-behavior: smooth;
+		}
 
-				<div class="modal-body">
-					<p style="font-size:1.2em;">¡Up!, parece que su teléfono no es compatible con la App, espere a una actualización compatible con su teléfono.</p>
-				</div>
+		body {
+			font-family: 'Inter', sans-serif;
+			background-color: var(--bg-body);
+			color: var(--text-main);
+			line-height: 1.6;
+		}
 
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
 
-				<div class="modal-footer">
-					<button onclick="cerrarApp();" class="btn btn-danger">Salir</button>
-				</div>
+		/* --- Navbar --- */
+		nav {
+			padding: 25px 0;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
-			</div>
-		</div>
-	</div>
+		.logo {
+			font-weight: 800;
+			font-size: 1.1rem;
+			color: var(--primary);
+			text-decoration: none;
+			letter-spacing: 1px;
+		}
 
-	<!-- Modal para validacion de la conectividad -->
-	<div style="background:#000000;" class="modal fade" id="ModConectividad" role="dialog"  aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div style="background:#E72B2D;color:#ffffff;" class="modal-header">
+		/* --- Hero Section --- */
+		.hero {
+			padding: 80px 0;
+			animation: fadeIn 1s ease-in;
+		}
 
-					<span onclick="cerrarApp();" class="btn btn-default btn-xs pull-right" aria-hidden="true">x</span>
-					<h4 class="modal-title">Error de conexión</h4>
-				</div>
+		.badge {
+			display: inline-block;
+			background: rgba(35, 134, 54, 0.15);
+			color: #3fb950;
+			padding: 4px 12px;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			font-weight: 600;
+			margin-bottom: 15px;
+			border: 1px solid rgba(63, 185, 80, 0.3);
+		}
 
-				<div class="modal-body">
-					<p id="Reconectando" style="font-size:1.2em;font-weight:700;"></p>
-					<br>
-					<p style="font-size:1.2em;">No tienes acceso a internet, asegúrate que el wi-fi o los datos móviles estén activados y contar con un plan de internet. No te preocupes esto es solo para validar la App, después podrás usar la app sin conexión a internet.</p>
-				</div>
+		h1 {
+			font-size: clamp(2.5rem, 6vw, 3.5rem);
+			color: var(--text-bright);
+			margin-bottom: 10px;
+		}
 
+		.subtitle {
+			font-size: 1.5rem;
+			color: var(--primary);
+			margin-bottom: 25px;
+		}
 
-				<div class="modal-footer">
-					<button onclick="reintentar();" class="btn btn-primary">Reintentar</button> 
-					<button onclick="cerrarApp();" class="btn btn-danger">Salir</button>
-				</div>
+		.description {
+			max-width: 600px;
+			font-size: 1.1rem;
+			color: #8b949e;
+		}
 
-			</div>
-		</div>
-	</div>
-	
+		/* --- Sections --- */
+		section {
+			padding: 60px 0;
+		}
 
- 
+		h2 {
+			font-size: 1.5rem;
+			color: var(--text-bright);
+			margin-bottom: 30px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		/* --- Experience/Education Cards --- */
+		.card {
+			background: var(--bg-card);
+			border: 1px solid var(--border);
+			padding: 25px;
+			border-radius: 12px;
+			margin-bottom: 20px;
+			transition: 0.2s;
+		}
+
+		.card:hover {
+			border-color: var(--primary);
+			background: #1c2128;
+		}
+
+		.card-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 10px;
+		}
+
+		.card-title {
+			color: var(--text-bright);
+			font-weight: 600;
+			font-size: 1.1rem;
+		}
+
+		.card-date {
+			font-size: 0.85rem;
+			color: var(--primary);
+		}
+
+		.card-company {
+			display: block;
+			font-size: 0.9rem;
+			color: #8b949e;
+			margin-bottom: 10px;
+		}
+
+		/* --- Skills Grid --- */
+		.skills-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 20px;
+		}
+
+		.skill-item h3 {
+			font-size: 1rem;
+			margin-bottom: 15px;
+			color: var(--primary);
+		}
+
+		.tag-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.tag {
+			background: var(--secondary);
+			border: 1px solid var(--border);
+			padding: 5px 12px;
+			border-radius: 6px;
+			font-size: 0.85rem;
+		}
+
+		/* --- Contact --- */
+		.contact-section {
+			text-align: center;
+			background: linear-gradient(rgba(88, 166, 255, 0.05), transparent);
+			border-radius: 20px;
+			padding: 60px 20px;
+		}
+
+		.btn-contact {
+			display: inline-flex;
+			align-items: center;
+			gap: 10px;
+			background: var(--primary);
+			color: #0d1117;
+			padding: 12px 30px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 700;
+			margin-top: 20px;
+			transition: 0.3s;
+		}
+
+		.btn-contact:hover {
+			opacity: 0.9;
+			transform: translateY(-2px);
+		}
+
+		footer {
+			padding: 50px 0;
+			text-align: center;
+			font-size: 0.85rem;
+			color: #484f58;
+			border-top: 1px solid var(--border);
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+				transform: translateY(10px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		@media (max-width: 600px) {
+			.card-header {
+				flex-direction: column;
+			}
+
+			.card-date {
+				margin-top: 5px;
+			}
+		}
+	</style>
+</head>
+
 <body>
 
-	<div class="Principal">
-
-	<header class="encabezado">
-		
-		<div style="height:3.4em;padding-right:7px; padding-top: 0.7em;" id="forMenuClose">
-			<span class="glyphicon glyphicon-menu-hamburger" id="mostrar-menu"></span>
-
-			
-			<div class="dropdown pull-right">
-				<a class="logout dropdown-toggle" id="dropdown1" data-toggle="dropdown" role="button" href="#"><img class="img-responsive img-circle" id="foto-usuario" src="assets/img/foto-usuario/defecto.jpeg" width="27" height="25"></a>
-				
-				<ul class="dropdown-menu drop" role="menu" aria-labelledby="dropdown1">
-				   <div class="dropdown-header">
-				
-				   <span style="text-align: center;font-size: 1.2em;" id="nombre-usuario">Einer Mercado Zelaya</span>
-
-					</div>
-					<div class="contenido-dropdown">
-						
-
-					</div>
-
-					<div class="pies-dropdown">
-
-					</div>
-
-
-				</ul>
+	<div class="container">
+		<nav>
+			<a href="#" class="logo">EINER.MERCADO</a>
+			<div style="display: flex; gap: 20px;">
+				<a href="mailto:einer.m.z58@gmail.com" title="Email" style="color: var(--text-main);"><i
+						class="fa-solid fa-envelope"></i></a>
+				<a href="tel:86566758" title="Teléfono" style="color: var(--text-main);"><i
+						class="fa-solid fa-phone"></i></a>
 			</div>
-			
-			<p class="titulo">BIENVENIDO</p>
-			
+		</nav>
 
-		</div>
-		
-	</header>
-	
+		<header class="hero">
+			<span class="badge">Ingeniero de Sistemas</span>
+			<h1>Einer Mercado Zelaya</h1>
+			<p class="subtitle">Especialista en Soporte Técnico y Desarrollo Web</p>
+			<p class="description">
+				Profesional con amplia experiencia en mantenimiento de infraestructura tecnológica, administración de
+				redes y desarrollo de soluciones digitales. Enfocado en la eficiencia operativa y la mejora continua.
+			</p>
+		</header>
 
-	<div style="text-align: center;padding: 1em;" id="contendorPCV">
-		<img  class="img-responsive" id="dropdown-img" src="assets/img/MEME.jpeg">
-		<a id="linkcv" href="curriculum.html">Aqui tienes mi curriculum</a>
+		<section id="habilidades">
+			<h2><i class="fa-solid fa-code"></i> Stack Tecnológico</h2>
+			<div class="skills-container">
+				<div class="skill-item">
+					<h3>Desarrollo & Base de Datos</h3>
+					<div class="tag-list">
+						<span class="tag">PHP (CodeIgniter)</span>
+						<span class="tag">JavaScript (jQuery)</span>
+						<span class="tag">MySQL</span>
+						<span class="tag">HTML5 / CSS3</span>
+						<span class="tag">Bootstrap</span>
+					</div>
+				</div>
+				<div class="skill-item">
+					<h3>Infraestructura & Soporte</h3>
+					<div class="tag-list">
+						<span class="tag">Redes LAN/WLAN</span>
+						<span class="tag">Soporte Técnico Especializado</span>
+						<span class="tag">Mantenimiento de Hardware</span>
+						<span class="tag">Microsoft Office Expert</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="experiencia">
+			<h2><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h2>
+
+			<div class="card">
+				<div class="card-header">
+					<span class="card-title">Soporte Técnico Especializado</span>
+					<span class="card-date">2023 - Presente</span>
+				</div>
+				<span class="card-company">INATEC - Waspam</span>
+				<p>Gestión y mantenimiento de la infraestructura tecnológica, resolución de incidencias de red y soporte
+					integral a equipos informáticos.</p>
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<span class="card-title">Docente de Tecnologías</span>
+					<span class="card-date">2020</span>
+				</div>
+				<span class="card-company">Centro Tecnológico Onofre Martínez</span>
+				<p>Instrucción técnica en herramientas de ofimática, sistemas operativos y competencias digitales
+					avanzadas.</p>
+			</div>
+		</section>
+
+		<section id="educacion">
+			<h2><i class="fa-solid fa-graduation-cap"></i> Formación Académica</h2>
+
+			<div class="card">
+				<div class="card-header">
+					<span class="card-title">Ingeniería de Sistemas Computacionales</span>
+					<span class="card-date">Graduado</span>
+				</div>
+				<span class="card-company">Universidad BICU - Recinto Bilwi</span>
+			</div>
+
+			<div class="card">
+				<div class="card-header">
+					<span class="card-title">Técnico General en Computación</span>
+					<span class="card-date">Certificado</span>
+				</div>
+				<span class="card-company">INATEC</span>
+			</div>
+		</section>
+
+		<section class="contact-section">
+			<h2>¿Tienes un proyecto en mente?</h2>
+			<p>Disponible para colaboraciones técnicas, soporte especializado o desarrollo de software.</p>
+			<a href="mailto:einer.m.z58@gmail.com" class="btn-contact">
+				<i class="fa-solid fa-paper-plane"></i> Enviar Correo Profesional
+			</a>
+			<div style="margin-top: 25px; display: flex; justify-content: center; gap: 20px; font-size: 0.9rem;">
+				<span><i class="fa-solid fa-location-dot"></i> Nicaragua</span>
+				<span><i class="fa-solid fa-language"></i> Miskito / Español / Inglés</span>
+			</div>
+		</section>
+
+		<footer>
+			<p>&copy; 2024 Einer Mercado Zelaya | Ingeniería de Sistemas</p>
+			<p style="margin-top: 5px;">Waspam, RACCN.</p>
+		</footer>
 	</div>
 
-	
-
-	<aside id="menu-lateral" class="menu-lateral">
-
-	<ul id="accordion" class="accordion">
-		<div class="aside-content-header" style="background-image: url(assets/img/kali.jpg);padding: 8px;">
-			<div style="width: 60px;height: 60px;border-radius:35px;margin-bottom: 10px;">
-			<img  class="img-responsive img-circle" id="dropdown-img" src="assets/img/foto-usuario/defecto.jpeg">	
-			</div>
-			<div>
-				<p style="position: relative;bottom: 10px;font-weight: 700;font-size: 15px;left: 5px;color:#ffffff;">EINER MERCADO ZELAYA</p>
-				<p style="position: relative;bottom: 20px;font-weight: 700;font-size: 12px;left: 8px;color:#ffffff;">einer.m.z58@gmail.com</p>
-			</div>
-	
-		</div>
-
-		<li>
-			<a class="link" href="index.html"><i class="glyphicon glyphicon-home"></i>Home</a>
-		</li>
-		
-		<li>
-			<a class="link" href="curriculum.html"><i class="glyphicon glyphicon-user"></i>Curriculum Vitae</a>
-		</li>
-
-		<li>
-			<a class="link" href="proyectos.html"><i class="glyphicon glyphicon-list"></i>Proyectos realizados</a>
-		</li>
-		
-		<li>
-			<a class="link" href="acercade.html"><i class="glyphicon glyphicon-question-sign"></i>Acerca de</a>
-		</li>
-		
-		
-
-	</ul>
-			
-</aside>
-
-<div id="mostrarM"></div>
- 
-
-
-</div>
-
 </body>
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.js"></script>
-<script src="assets/plugin/select2/js/select2.js"></script>
-<script src="assets/plugin/select2/js/es/es.js"></script>
-<script src="assets/js/fs-modal.min.js"></script>
-<script src="assets/js/codigodisenio.js"></script>
-<script src="assets/js/hammer.js"></script>
-<script src="assets/js/alertify.js"></script>
-<script src="assets/js/inicio.js"></script>
-
-<script>
-
-$.fn.delayPasteKeyUp = function(fn, ms){var timer = 0;$(this).on('propertychange input', function(){clearTimeout(timer);timer = setTimeout(fn, ms);});};var mostrarM = new Hammer(document.getElementById('mostrarM'));mostrarM.on('swiperight',function(e){$('body').css({overflow:'hidden'});$('aside').addClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-menu-hamburger');$('#mostrar-menu').addClass('glyphicon glyphicon-remove');setTimeout(function(){$('aside').css({background:'rgba(0,0,0,0.5)'});},200);});var swipeMenuLateral = new Hammer(document.getElementById('menu-lateral'),['swipe']);swipeMenuLateral.on('swipeleft',function(e){$('body').css({overflow:'scroll'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');});var tapMenuLateral = new Hammer(document.getElementById('menu-lateral'),['tap']);tapMenuLateral.on('tap',function(e){var x = e.center.x;if (x > 230) {$('body').css({overflow:'scroll'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');}});var tapHeader = new Hammer(document.getElementById('forMenuClose'));tapHeader.on('tap',function(e){var x = e.center.x;if (x > 38) {$('body').css({overflow:'scroll'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');}});var cuerpoSwipe = new Hammer(document.getElementById('cuerpoSwipe'));cuerpoSwipe.on('swipeleft swiperight',function(e){var position = parseInt($('#position').html());var tipoGesto = e.type;if (tipoGesto==='swipeleft') {if (position==381) {}else{fade();setTimeout(function(){mostrar(position+1,'L');},300);}}else if(tipoGesto === 'swiperight'){if (position==1) {}else{fade();setTimeout(function(){mostrar(position-1,'L');},300);}}});function fade(){$('.cuerpo').fadeOut(300);$('.cuerpo').fadeIn(0);}$('#busqueda').on('blur', function(){$('#busqueda').val('');});$('#busqueda').delayPasteKeyUp(function(){var num = $('#busqueda').val();if (num==0) {num = 1;$('#busqueda').val('')}else if(num>381){num = 1;$('#busqueda').val('');}else if(num==' '){num=1;$('#busqueda').val('');}else if(num==''){num=1;}mostrar(num, 'L');});function abreModalBusqueda(){$('#busquedaHimno').val('');$('#cuerpoM').html('');document.getElementById('coincidenciasB').innerHTML ='';$('#modalSearch').modal({show:true,backdrop:'static',});setTimeout(function(){document.getElementById('busquedaHimno').focus();},200);}$('#busquedaHimno').delayPasteKeyUp(function(){if ($('#busquedaHimno').val() == '') {$('#busquedaHimno').val('');$('#cuerpoM').html('');document.getElementById('coincidenciasB').innerHTML ='';}},100);$('#formBuscaHimno').submit(function(e){e.preventDefault();var himnos = [];dataBase = id.open('Lawana', 1);dataBase.onsuccess = function(e){var baseD = e.target.result;var ObjetoDB = baseD.transaction(['lawana'], 'readonly').objectStore('lawana');ObjetoDB.get(1).onsuccess = function(event){var res = event.target.result;himnos = res.lawana;var dato = $('#busquedaHimno').val();if (dato == '') {}else if(dato == '0'){}else{Android.bloquear();document.getElementById('coincidenciasB').innerHTML = '';setTimeout(function(){var texto = new RegExp(dato,'gi');var start = performance.now();var resultadoBusqueda = himnos.filter(function(item){return texto.test(item);});if (resultadoBusqueda.length > 0) {document.getElementById('cuerpoM').innerHTML = ``;setTimeout(function(){document.getElementById('coincidenciasB').innerHTML = `<div style="box-shadow: 0px 0px 7px;width:90%;margin:0 auto;padding:7px;border-radius:10px;background:#fff;color:#000">${resultadoBusqueda.length} resultados.</div>`;for (var i = 0; i < resultadoBusqueda.length; i++) {document.getElementById('cuerpoM').innerHTML += `<div id="${i}" onclick="eval(${i});" style="box-shadow: 0px 0px 7px;width:80%;margin:20px auto; auto;padding:7px;border-radius:10px;max-height:200px;overflow-y:auto;">${resultadoBusqueda[i]}</div>`;}Android.desbloquear();},100);}else{Android.desbloquear();document.getElementById('coincidenciasB').innerHTML = `<div style="box-shadow: 0px 0px 7px;width:90%;margin:0 auto;padding:7px;border-radius:10px;background:#fff;color:#000;">No se encontró resultado.</div>`;document.getElementById('cuerpoM').innerHTML = ``;}},100);}}}});function eval(id) {let num = $(`#${id}>p`).html();mostrar(num,'L');$('#modalSearch').modal('hide');}$('.dropdown').on('show.bs.dropdown',function(){$('body').css({overflow:'hidden'});$('aside').css({background:'rgba(0,0,0,0)'});$('aside').removeClass('mostrar-menu');$('#mostrar-menu').removeClass('glyphicon glyphicon-remove');$('#mostrar-menu').addClass('glyphicon glyphicon-menu-hamburger');});$('.dropdown').on('hide.bs.dropdown',function(){$('body').css({overflow:'scroll'});}); function mostrarImei2(){Android.mostrarImei()}
-
-</script>
 
 </html>
-

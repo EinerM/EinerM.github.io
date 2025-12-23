@@ -48,7 +48,6 @@
 			padding: 0 20px;
 		}
 
-		/* --- Navbar --- */
 		nav {
 			padding: 25px 0;
 			display: flex;
@@ -64,7 +63,6 @@
 			letter-spacing: 1px;
 		}
 
-		/* --- Hero Section --- */
 		.hero {
 			padding: 80px 0;
 			animation: fadeIn 1s ease-in;
@@ -100,7 +98,6 @@
 			color: #8b949e;
 		}
 
-		/* --- Sections --- */
 		section {
 			padding: 60px 0;
 		}
@@ -114,7 +111,6 @@
 			gap: 10px;
 		}
 
-		/* --- Experience/Education Cards --- */
 		.card {
 			background: var(--bg-card);
 			border: 1px solid var(--border);
@@ -122,6 +118,7 @@
 			border-radius: 12px;
 			margin-bottom: 20px;
 			transition: 0.2s;
+			position: relative;
 		}
 
 		.card:hover {
@@ -154,7 +151,6 @@
 			margin-bottom: 10px;
 		}
 
-		/* --- Skills Grid --- */
 		.skills-container {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -181,7 +177,21 @@
 			font-size: 0.85rem;
 		}
 
-		/* --- Contact --- */
+		.play-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 0.85rem;
+			color: var(--primary);
+			text-decoration: none;
+			margin-top: 15px;
+			font-weight: 600;
+		}
+
+		.play-link:hover {
+			text-decoration: underline;
+		}
+
 		.contact-section {
 			text-align: center;
 			background: linear-gradient(rgba(88, 166, 255, 0.05), transparent);
@@ -256,24 +266,26 @@
 		<header class="hero">
 			<span class="badge">Ingeniero de Sistemas</span>
 			<h1>Einer Mercado Zelaya</h1>
-			<p class="subtitle">Especialista en Soporte Técnico y Desarrollo Web</p>
+			<p class="subtitle">Especialista en Soporte Técnico y Desarrollo Móvil</p>
 			<p class="description">
 				Profesional con amplia experiencia en mantenimiento de infraestructura tecnológica, administración de
-				redes y desarrollo de soluciones digitales. Enfocado en la eficiencia operativa y la mejora continua.
+				redes y desarrollo de soluciones móviles. Creador de aplicaciones publicadas en Google Play orientadas a
+				la productividad y cultura regional.
 			</p>
 		</header>
 
+		<!-- SECCIÓN DE HABILIDADES -->
 		<section id="habilidades">
 			<h2><i class="fa-solid fa-code"></i> Stack Tecnológico</h2>
 			<div class="skills-container">
 				<div class="skill-item">
-					<h3>Desarrollo & Base de Datos</h3>
+					<h3>Desarrollo Web & Móvil</h3>
 					<div class="tag-list">
+						<span class="tag">Android (Java)</span>
 						<span class="tag">PHP (CodeIgniter)</span>
 						<span class="tag">JavaScript</span>
 						<span class="tag">MySQL</span>
 						<span class="tag">HTML5 / CSS3</span>
-						<span class="tag">Bootstrap</span>
 					</div>
 				</div>
 				<div class="skill-item">
@@ -282,35 +294,61 @@
 						<span class="tag">Redes LAN/WLAN</span>
 						<span class="tag">Soporte Técnico Especializado</span>
 						<span class="tag">Mantenimiento de Hardware</span>
-						<span class="tag">Microsoft Office Expert</span>
+						<span class="tag">Gestión de Play Console</span>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- <section id="experiencia">
-			<h2><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h2>
+		<!-- NUEVA SECCIÓN: PROYECTOS PERSONALES -->
+		<section id="proyectos">
+			<h2><i class="fa-brands fa-google-play"></i> Proyectos en Google Play</h2>
 
 			<div class="card">
 				<div class="card-header">
-					<span class="card-title">Soporte Técnico Especializado</span>
-					<span class="card-date">2023</span>
+					<span class="card-title">ESCANER QR A PC</span>
+					<span class="card-date">Productividad</span>
 				</div>
-				<span class="card-company">INATEC - Waspam</span>
-				<p>Gestión y mantenimiento de la infraestructura tecnológica, resolución de incidencias de red y soporte
-					integral a equipos informáticos.</p>
+				<p>Aplicación innovadora que permite escanear códigos QR y barras para enviarlos instantáneamente a una
+					computadora a través de red WiFi, optimizando procesos de inventario y entrada de datos.</p>
+				<div class="tag-list" style="margin-top: 10px;">
+					<span class="tag">Java</span>
+					<span class="tag">Socket Programming</span>
+					<span class="tag">Android Studio</span>
+				</div>
+				<a href="#" class="play-link"><i class="fa-brands fa-google-play"></i> Ver en Play Store</a>
 			</div>
 
 			<div class="card">
 				<div class="card-header">
-					<span class="card-title">Docente de Tecnologías</span>
-					<span class="card-date">2020</span>
+					<span class="card-title">Rutas Waspam</span>
+					<span class="card-date">Información</span>
 				</div>
-				<span class="card-company">Centro Tecnológico Onofre Martínez</span>
-				<p>Instrucción técnica en herramientas de ofimática, sistemas operativos y competencias digitales
-					avanzadas.</p>
+				<p>Guía digital completa sobre rutas de transporte terrestre y acuático en el municipio de Waspam.
+					Provee horarios y destinos clave para la movilidad en la región de la Costa Caribe.</p>
+				<div class="tag-list" style="margin-top: 10px;">
+					<span class="tag">Android</span>
+					<span class="tag">Local Database</span>
+					<span class="tag">UI/UX</span>
+				</div>
+				<a href="#" class="play-link"><i class="fa-brands fa-google-play"></i> Ver en Play Store</a>
 			</div>
-		</section>-->
+
+			<div class="card">
+				<div class="card-header">
+					<span class="card-title">Morevian Lawana</span>
+					<span class="card-date">Cultura & Religión</span>
+				</div>
+				<p>Versión digital del himnario de la Iglesia Morava en lengua Miskito. Una herramienta cultural
+					esencial para la preservación del idioma y la fe de las comunidades del Caribe.</p>
+				<div class="tag-list" style="margin-top: 10px;">
+					<span class="tag">Java</span>
+					<span class="tag">Miskito Language</span>
+					<span class="tag">Firebase</span>
+				</div>
+				<a href="#" class="play-link"><i class="fa-brands fa-google-play"></i> Ver en Play Store</a>
+			</div>
+		</section>
 
 		<section id="educacion">
 			<h2><i class="fa-solid fa-graduation-cap"></i> Formación Académica</h2>
@@ -345,7 +383,7 @@
 		</section>
 
 		<footer>
-			<p>&copy; 2024 Einer Mercado Zelaya | Ingeniería de Sistemas</p>
+			<p>&copy; 2025 Einer Mercado Zelaya | Ingeniería de Sistemas</p>
 			<p style="margin-top: 5px;">Waspam, RACCN.</p>
 		</footer>
 	</div>

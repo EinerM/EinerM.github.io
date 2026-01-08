@@ -19,6 +19,7 @@
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --accent: #00d2ff;
+            --coffee-color: #ffdd00;
         }
 
         * {
@@ -47,14 +48,6 @@
             text-align: center;
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            letter-spacing: -1px;
-            color: var(--primary-color);
-            text-transform: uppercase;
-        }
-
         /* --- Hero Section --- */
         .hero {
             padding: 60px 0;
@@ -78,6 +71,7 @@
             margin: 0 auto 40px;
         }
 
+        /* Botones */
         .btn-download {
             display: inline-flex;
             align-items: center;
@@ -91,6 +85,9 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+            margin-bottom: 15px;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-download:hover {
@@ -99,29 +96,157 @@
             box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
         }
 
-        /* --- Screenshot Section --- */
+        .btn-coffee {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .btn-coffee:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--coffee-color);
+            color: var(--coffee-color);
+            transform: translateY(-2px);
+        }
+
+        .btn-coffee i {
+            color: var(--coffee-color);
+            font-size: 1.1rem;
+        }
+
+        /* --- MODAL STYLES --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            /* Oculto por defecto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--card-bg);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 24px;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            animation: modalScale 0.3s ease-out;
+        }
+
+        @keyframes modalScale {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-title {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--coffee-color);
+        }
+
+        .donation-section {
+            margin-bottom: 25px;
+        }
+
+        .donation-section h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 5px;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+        }
+
+        .option-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-color);
+        }
+
+        .option-icon {
+            font-size: 1.4rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .option-info strong {
+            display: block;
+            font-size: 1rem;
+        }
+
+        .option-info span {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* --- RESTO DE ESTILOS --- */
         .screenshot-container {
             margin: 60px auto;
-            position: relative;
             max-width: 800px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: slideUp 1s ease-out;
         }
 
         .screenshot-container img {
             width: 100%;
             display: block;
-            transition: transform 0.5s ease;
         }
 
-        .screenshot-container:hover img {
-            transform: scale(1.02);
-        }
-
-        /* --- Steps Section --- */
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -135,11 +260,6 @@
             border-radius: 20px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: border 0.3s ease;
-        }
-
-        .step-card:hover {
-            border-color: var(--primary-color);
         }
 
         .step-icon {
@@ -148,26 +268,13 @@
             margin-bottom: 20px;
         }
 
-        .step-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .step-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* --- Footer --- */
         footer {
             padding: 60px 0;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
-            font-size: 0.9rem;
         }
 
-        /* --- Animaciones --- */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -178,29 +285,13 @@
             }
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* --- Responsive --- */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
 
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .btn-download {
+            .btn-download,
+            .btn-coffee {
                 width: 100%;
                 justify-content: center;
             }
@@ -210,12 +301,6 @@
 
 <body>
 
-    <header>
-        <div class="container">
-
-        </div>
-    </header>
-
     <main class="container">
         <!-- Hero -->
         <section class="hero">
@@ -223,18 +308,31 @@
             <p>Envía enlaces, textos y datos de inventario directamente a tu computadora mediante WiFi. Sin cables, sin
                 complicaciones.</p>
 
-            <!-- REEMPLAZA EL LINK DE DRIVE AQUÍ -->
-            <a href="https://drive.google.com/file/d/1YiMW5Gb9qt6MJzd1h-RVmW8F7i6pU1fn/view?usp=drive_link"
-                class="btn-download" target="_blank">
-                <i class="fa-brands fa-windows"></i>
-                Descargar Receptor para Windows
-            </a>
-            <p style="margin-top: 15px; font-size: 0.8rem;">Versión 1.0.0 | Compatible con Windows 10 y 11</p>
+            <div>
+                <a href="https://drive.google.com/file/d/1YiMW5Gb9qt6MJzd1h-RVmW8F7i6pU1fn/view?usp=drive_link"
+                    class="btn-download" target="_blank">
+                    <i class="fa-brands fa-windows"></i>
+                    Descargar Receptor para Windows
+                </a>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 0.8rem; color: var(--text-muted);">Versión 1.0.0 | Compatible con
+                Windows 10 y 11</p>
+
+            <!-- BOTÓN QUE ABRE EL MODAL -->
+            <div>
+                <button class="btn-coffee" onclick="openModal()">
+
+                    Si quieres apoyarme,
+                    <i class="fa-solid fa-mug-hot"></i>
+                    invítame un café!
+                </button>
+            </div>
+
         </section>
 
         <!-- Screenshot -->
         <section class="screenshot-container">
-            <!-- REEMPLAZA ESTA URL POR UNA CAPTURA REAL DE TU PROGRAMA -->
             <img src="assets/img/servidor_escaner.png" alt="Captura de pantalla del receptor QR">
         </section>
 
@@ -243,8 +341,7 @@
             <div class="step-card">
                 <div class="step-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
                 <h3>1. Descarga</h3>
-                <p>Ejecuta el receptor en tu PC y asegúrate de estar conectado a la misma red WiFi que tu móvil. o
-                    conectar tu pc en zona (Hotspot) de tu celular.</p>
+                <p>Ejecuta el receptor en tu PC y asegúrate de estar conectado a la misma red WiFi o Hotspot.</p>
             </div>
             <div class="step-card">
                 <div class="step-icon"><i class="fa-solid fa-qrcode"></i></div>
@@ -254,24 +351,79 @@
             <div class="step-card">
                 <div class="step-icon"><i class="fa-solid fa-paper-plane"></i></div>
                 <h3>3. ¡Listo!</h3>
-                <p>Cualquier QR que escanees se enviará instantáneamente a tu computadora.</p>
+                <p>Cualquier QR que escanees se enviará instantáneamente al campo de texto activo en tu PC.</p>
             </div>
         </section>
     </main>
 
+    <!-- MODAL DE DONACIONES -->
+    <div class="modal-overlay" id="donationModal" onclick="closeModalOutside(event)">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h3 class="modal-title">¡Gracias por tu apoyo! ☕</h3>
+
+            <!-- Extranjeros -->
+            <div class="donation-section">
+                <h4>Otros Países</h4>
+                <a href="https://paypal.me/TU_USUARIO" class="option-card" target="_blank">
+                    <div class="option-icon" style="color: #0070ba;"><i class="fa-brands fa-paypal"></i></div>
+                    <div class="option-info">
+                        <strong>PayPal</strong>
+                        <span>Donación internacional rápida</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Nicaragua -->
+            <div class="donation-section">
+                <h4>Nicaragua</h4>
+
+                <!-- Billetera Banpro -->
+                <div class="option-card">
+                    <div class="option-icon" style="color: #00a859;"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <div class="option-info">
+                        <strong>Billetera Móvil Banpro</strong>
+                        <span>Número: 86566758</span>
+                    </div>
+                </div>
+
+                <!-- Transferencia Bancaria -->
+                <div class="option-card">
+                    <div class="option-icon" style="color: #f7941d;"><i class="fa-solid fa-building-columns"></i></div>
+                    <div class="option-info">
+                        <strong>Transferencia Banpro</strong>
+                        <span>Cuenta:</span>
+                        <span>Titular: Einer Mercado Zelaya</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 EMZ Tech Service. Todos los derechos reservados.</p>
-
         </div>
     </footer>
 
     <script>
-        // Un poco de interactividad: Suavizar la aparición de los elementos al hacer scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Página del Receptor QR lista.");
-            // Aquí podrías añadir un script para verificar si el link de Drive es válido
-        });
+        const modal = document.getElementById('donationModal');
+
+        function openModal() {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Evita scroll al estar abierto
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOutside(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
     </script>
 </body>
 
